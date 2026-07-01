@@ -49,7 +49,7 @@ than the server spawning a thread per request or per connection.
 
 ## Build
 
-Requires CMake ≥ 3.16, a C++17 compiler, and pthreads (Linux/macOS/WSL).
+Requires CMake ≥ 3.16, a C++ compiler, and pthreads (Linux/macOS/WSL).
 
 ```bash
 mkdir build && cd build
