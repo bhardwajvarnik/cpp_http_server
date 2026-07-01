@@ -1,6 +1,6 @@
 # cpp-http-server
 
-A multi-threaded HTTP/1.1 server written from raw POSIX sockets in modern C++17 —
+A multi-threaded HTTP/1.1 server written from raw POSIX sockets in modern C++ —
 no Boost.Asio, no third-party HTTP libraries. It can run as a standalone web
 server (routing, static files, keep-alive) or as a reverse proxy / load
 balancer in front of other instances of itself.
