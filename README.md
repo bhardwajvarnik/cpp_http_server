@@ -114,29 +114,6 @@ sudo apt-get install wrk
 ./scripts/benchmark.sh 8080 10s 4 100
 ```
 
-This reports requests/sec and latency percentiles — worth including as a
-number in your resume bullet once you've run it on your own machine
-(e.g. "sustained ~X req/s with Y ms p99 latency under 100 concurrent
-connections").
 
-## Known simplifications (good talking points in an interview)
 
-- The reverse proxy re-wraps the backend's response body rather than
-  forwarding its headers byte-for-byte — a production proxy would pass
-  headers through untouched.
-- Uses a blocking-read-per-thread model (thread pool), not an `epoll`-based
-  event loop. This is simpler to reason about and still handles real
-  concurrent load well; an `epoll`/reactor rewrite (nginx-style, one loop
-  per thread) is the natural "next stage" if you want to push scalability
-  further and is a good thing to mention as future work.
-- No HTTPS/TLS termination — would typically sit behind a TLS-terminating
-  proxy or use OpenSSL directly.
-
-## Suggested resume bullet
-
-> Built a multi-threaded HTTP/1.1 server and reverse proxy in C++17 from raw
-> POSIX sockets (no framework), implementing a custom thread pool, HTTP
-> parser, keep-alive connection handling, and round-robin/least-connections
-> load balancing with health checks; validated with a unit test suite and
-> CI, and benchmarked at [X] req/s.
 
