@@ -140,6 +140,3 @@ connections").
 > load balancing with health checks; validated with a unit test suite and
 > CI, and benchmarked at [X] req/s.
 
-## License
-
-MIT — see [LICENSE](LICENSE).
